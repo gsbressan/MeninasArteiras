@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MeninasArteiras.Models.Pedido>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemaDoEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDoEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDePagamento.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstaPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormaDeEntrega.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FoiEntregue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemaDoEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDoEvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDeEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormaDePagamento.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstaPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormaDeEntrega.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoiEntregue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PedidoID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PedidoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PedidoID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

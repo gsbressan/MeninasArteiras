@@ -1,0 +1,100 @@
+﻿@model MeninasArteiras.Models.Pedido
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pedido</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PedidoID, "Numero do Pedido")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.PedidoID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClienteID, "Cliente")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ClienteID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ClienteID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TemaDoEvento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TemaDoEvento)
+            @Html.ValidationMessageFor(model => model.TemaDoEvento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDoEvento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDoEvento)
+            @Html.ValidationMessageFor(model => model.DataDoEvento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDeEntrega)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDeEntrega)
+            @Html.ValidationMessageFor(model => model.DataDeEntrega)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FormaDePagamentoID, "Forma de pagamento")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FormaDePagamentoID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FormaDePagamentoID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EstaPago)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EstaPago)
+            @Html.ValidationMessageFor(model => model.EstaPago)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FormaDeEntregaID, "Forma de entrega")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FormaDeEntregaID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FormaDeEntregaID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FoiEntregue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FoiEntregue)
+            @Html.ValidationMessageFor(model => model.FoiEntregue)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorTotal)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.ValorTotal)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

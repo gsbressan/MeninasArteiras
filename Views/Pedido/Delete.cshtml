@@ -1,0 +1,82 @@
+﻿@model MeninasArteiras.Models.Pedido
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Pedido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cliente.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TemaDoEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemaDoEvento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDoEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDoEvento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDeEntrega)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDeEntrega)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaDePagamento.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaDePagamento.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstaPago)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstaPago)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FormaDeEntrega.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaDeEntrega.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FoiEntregue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FoiEntregue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorTotal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorTotal)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

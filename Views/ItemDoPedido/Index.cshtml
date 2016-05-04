@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MeninasArteiras.Models.ItemDoPedido>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeDoItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotalDoItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PedidoID)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeDoItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotalDoItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdutoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PedidoID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ItemDoPedidoID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ItemDoPedidoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ItemDoPedidoID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

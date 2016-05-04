@@ -1,0 +1,51 @@
+﻿@model MeninasArteiras.Models.ItemDoPedido
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ItemDoPedido</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.QuantidadeDoItem)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.QuantidadeDoItem)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ValorTotalDoItem)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ValorTotalDoItem)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ProdutoID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ProdutoID)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PedidoID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PedidoID)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.ItemDoPedidoID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

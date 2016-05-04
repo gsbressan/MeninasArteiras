@@ -1,0 +1,81 @@
+﻿@model MeninasArteiras.Models.Pedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pedido</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Cliente.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cliente.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TemaDoEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemaDoEvento)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DataDoEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDoEvento)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DataDeEntrega)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDeEntrega)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FormaDePagamento.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaDePagamento.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.EstaPago)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstaPago)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FormaDeEntrega.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FormaDeEntrega.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FoiEntregue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FoiEntregue)
+    </div>
+    <div>
+        <h3>Itens do pedido</h3>
+        @Html.Action("_ListaDeItens", "Pedido", Model)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ValorTotal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorTotal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PedidoID }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

@@ -1,0 +1,65 @@
+﻿@model MeninasArteiras.Models.ItemDoPedido
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>ItemDoPedido</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QuantidadeDoItem)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QuantidadeDoItem)
+                @Html.ValidationMessageFor(model => model.QuantidadeDoItem)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ValorTotalDoItem)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ValorTotalDoItem)
+                @Html.ValidationMessageFor(model => model.ValorTotalDoItem)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ProdutoID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ProdutoID)
+                @Html.ValidationMessageFor(model => model.ProdutoID)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PedidoID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PedidoID)
+                @Html.ValidationMessageFor(model => model.PedidoID)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
